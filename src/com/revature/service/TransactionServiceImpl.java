@@ -21,6 +21,8 @@ public class TransactionServiceImpl implements TransactionService {
 			tempAmount = user.getBalance() + amount;
 			user.setBalance(tempAmount);
 			userDao.updateUser(user);
+			System.out.println("You have deposited $" + amount);
+			System.out.println("Your current balance is: \n" + user.getBalance() + "\n");
 		}
 		else {
 			log.error("Amount is invalid");
@@ -41,7 +43,7 @@ public class TransactionServiceImpl implements TransactionService {
 			
 			user.setBalance(tempAmount);
 			userDao.updateUser(user);
-			System.out.println(user.getBalance());
+			System.out.println("Your current account balance is: \n" + user.getBalance() + "\n");
 		}
 		else {
 			log.error("User tried to overdraw account");

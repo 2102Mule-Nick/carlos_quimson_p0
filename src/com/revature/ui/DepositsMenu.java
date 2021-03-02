@@ -30,9 +30,8 @@ public class DepositsMenu implements Menu {
 		float deposit = Float.parseFloat(scan.nextLine());
 		try {
 			transaction.deposit(user, deposit); //calls the deposit method in the transaction class
-			System.out.println("Deposited ");
-			System.out.println(user.getBalance());
-			System.out.println(transaction.checkBalance(user));
+			//System.out.println(user.getBalance());
+			//System.out.println(transaction.checkBalance(user));
 			nextMenu = transactionMenu;
 		}
 		catch (IllegalArgumentException e) {
