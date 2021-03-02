@@ -2,6 +2,8 @@ package com.revature.ui;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.revature.dao.UserDao;
 import com.revature.pojo.Account;
 import com.revature.pojo.User;
@@ -14,6 +16,7 @@ public class TransactionMenu implements Menu {
 	private Menu withdrawalsMenu;
 	private Menu checkBalanceMenu;
 	private User user;
+	private Logger log = Logger.getRootLogger();
 	
 	@Override
 	public Menu advance() {
@@ -28,6 +31,7 @@ public class TransactionMenu implements Menu {
 		System.out.println("1 for deposits");
 		System.out.println("2 for withdrawals");
 		System.out.println("3 to check your balance");
+		System.out.println("0 to logout");
 		//System.out.println(user.getUsername());
 		
 		String transactionResponse = scan.nextLine();
@@ -48,6 +52,10 @@ public class TransactionMenu implements Menu {
 				((CheckBalanceMenu) checkBalanceMenu).setUser(user);
 				nextMenu = checkBalanceMenu;
 				break;
+			case "0":
+				System.out.println("You are now logged out. Thank you for using this app.");
+				log.info("User has logged out");
+				System.exit(0);
 			default:
 				System.out.println("Invalid Choice");
 				nextMenu = this; //returns to this menu if invalid choice made
