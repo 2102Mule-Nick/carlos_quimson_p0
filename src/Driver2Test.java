@@ -59,5 +59,13 @@ class Driver2Test {
 	public void checkGetUserName() {
 		assertEquals(user.getUsername(), userDaoImpl.getUserByUsername("carlostest").getUsername());
 	}
+	
+	/* Currently unsure of how to test void methods
+	@Test
+	public void checkDeposits() {
+		float result = transactionService.deposit(user, 10);
+		assertEquals(60, result);
+	}
+	*/
 
 }
