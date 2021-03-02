@@ -25,7 +25,7 @@ public class RegisterMenu implements Menu {
 
 	@Override
 	public void displayOptions() {
-		// TODO Auto-generated method stub
+		// Displays prompt from user input
 		System.out.println("Enter your first name");
 		String firstName = scan.nextLine();
 		System.out.println("Enter your last name");
@@ -39,13 +39,13 @@ public class RegisterMenu implements Menu {
 		
 		User user = new User(userName, password, firstName, lastName, balance);
 		
-		if (!authService.existingUser(user)) {
+		if (!authService.existingUser(user)) { // checks if username/user is already registered
 			try {
-				authService.registeredUser(user);
-				nextMenu = loginMenu;
+				authService.registeredUser(user); // calls the authService method to create the user
+				nextMenu = loginMenu; // passes the loginMenu as the nextMenu to display
 			}
-			catch (Exception e) {
-				System.out.println("Error. Register again");
+			catch (Exception e) { // catches possible exceptions from the AuthService
+				System.out.println("Error. Register again"); 
 				log.info("Error with the user's attempt to register");
 			}
 		}

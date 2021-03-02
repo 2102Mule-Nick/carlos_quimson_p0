@@ -8,14 +8,15 @@ public class AuthServiceImpl implements AuthService {
 	private UserDao userDao;
 	@Override
 	public boolean existingUser(User user) {
-		// TODO Auto-generated method stub
+		// Determines if a username / user is already registered. 
+		// accepts a user object as an argument
 		
 		try {
 			if (userDao.getUserByUsername(user.getUsername()) != null) {
 				return true;
 			}
 		} 
-		catch (Exception e) {
+		catch (Exception e) { 
 			return false;
 		}
 		
@@ -23,7 +24,7 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	public User authenticateUser(User user) {
-		// TODO Auto-generated method stub
+		// Makes sure that the password provided for the User object is the password associated for the User
 		
 		User existingUser = userDao.getUserByUsername(user.getUsername());
 		
@@ -35,7 +36,7 @@ public class AuthServiceImpl implements AuthService {
 
 	@Override
 	public User registeredUser(User user) {
-		// TODO Auto-generated method stub
+		// adds the user to the persistent files. Was supposed to be registerUser
 		userDao.createUser(user);
 		return user;
 	}

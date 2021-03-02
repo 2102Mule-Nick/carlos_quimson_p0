@@ -30,6 +30,7 @@ public class UserDaoKryo implements UserDao {
 		
 		log.info("Starting to create user");
 		
+		//uses kryo to create new user files in the user folders
 		try (FileOutputStream outputStream = new FileOutputStream(FOLDER_NAME + user.getUsername() + FILE_EXTENSION)){
 			Output output = new Output(outputStream);
 			kryo.writeObject(output, user);
@@ -47,7 +48,7 @@ public class UserDaoKryo implements UserDao {
 
 	@Override
 	public User getUserByUsername(String username) {
-		// TODO Auto-generated method stub
+		// Gets user information using the username input
 		
 		String fileName = FOLDER_NAME + username + FILE_EXTENSION;
 		File file = new File(fileName);
@@ -80,7 +81,7 @@ public class UserDaoKryo implements UserDao {
 
 	@Override
 	public void updateUser(User user) {
-		// TODO Auto-generated method stub
+		// Updates the persistent user file. Used whenever a deposit or withdrawal is made
 		try (FileOutputStream outputStream = new FileOutputStream(FOLDER_NAME + user.getUsername() + FILE_EXTENSION)){
 			Output output = new Output(outputStream);
 			kryo.writeObject(output, user);

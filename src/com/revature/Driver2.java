@@ -21,6 +21,17 @@ import com.revature.ui.TransactionMenu;
 import com.revature.ui.WelcomeMenu;
 import com.revature.ui.WithdrawalsMenu;
 
+/*
+ * This is a simple banking app
+ * The user is required to choose between "login" or "register" at the beginning of the app
+ * - the user will be reprompted if the user chooses and invalid choice. 
+ * 
+ * Once registered, the user is allowed to check their account balance, make deposits, and withdrawals.
+ * 
+ * Usernames have to be unique, and passwords are required. 
+ */
+
+
 public class Driver2 {
 	
 	public static void main(String[] args) {

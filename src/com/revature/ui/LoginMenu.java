@@ -27,7 +27,7 @@ public class LoginMenu implements Menu{
 
 	@Override
 	public void displayOptions() {
-		// TODO Auto-generated method stub
+		// Prompts user to enter their log in information
 		System.out.println("Enter your username");
 		String username = scan.nextLine();
 		System.out.println("Enter your password");
@@ -35,15 +35,15 @@ public class LoginMenu implements Menu{
 		
 		User user = new User(username, password);
 		
-		try {
+		try { //passes user information to authService to authenticate the username and password. if valid, user object gets passed to transacitonMenu
 			user = authService.authenticateUser(user);
 			((TransactionMenu) transactionMenu).setUser(user);
-			nextMenu = transactionMenu;
+			nextMenu = transactionMenu; //passes a transactionMenu with the user set as the next menu
 		}
-		catch (Exception e) { //needs to be a more specific Exception here 
+		catch (Exception e) { //catches exceptions from the authService
 			System.out.println("Check your login information and try again.");
 			log.info("User entered incorrect login information");
-			nextMenu = this;
+			nextMenu = this; //displays the same menu to give the user another chance to enter their log in information
 		}
 		
 		

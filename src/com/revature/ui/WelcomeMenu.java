@@ -20,21 +20,21 @@ public class WelcomeMenu implements Menu {
 
 	@Override
 	public void displayOptions() {
-		// TODO Auto-generated method stub
+		// Displays a welcome Menu for the User 
 		
 		System.out.println("Welcome to the Banking App");
 		System.out.println("What would you like to do? Login or register?");
 		String input = scan.nextLine();
 		
 		if ("login".equalsIgnoreCase(input)) {
-			nextMenu = loginMenu;
+			nextMenu = loginMenu; 
 		} 
 		else if("register".equalsIgnoreCase(input)) {
 			nextMenu = registerMenu;
 		}
 		else {
 			System.out.println("Invalid choice");
-			nextMenu = this;
+			nextMenu = this; //redisplays this page if the user made an invalid choice
 		}
 
 	}
