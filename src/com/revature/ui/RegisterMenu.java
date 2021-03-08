@@ -47,6 +47,7 @@ public class RegisterMenu implements Menu {
 			catch (Exception e) { // catches possible exceptions from the AuthService
 				System.out.println("Error. Register again"); 
 				log.info("Error with the user's attempt to register");
+				nextMenu = this;
 			}
 		}
 		else {

@@ -1,10 +1,16 @@
 package com.revature.service;
 
+import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+
 import com.revature.dao.UserDao;
 import com.revature.pojo.User;
 
 public class AuthServiceImpl implements AuthService {
 
+	private Logger log = Logger.getRootLogger();
+	
 	private UserDao userDao;
 	@Override
 	public boolean existingUser(User user) {
@@ -35,9 +41,16 @@ public class AuthServiceImpl implements AuthService {
 	}
 
 	@Override
-	public User registeredUser(User user) {
+	public User registeredUser(User user) throws Exception {
 		// adds the user to the persistent files. Was supposed to be registerUser
-		userDao.createUser(user);
+		log.info("UserDaoPostgres create User method getting called");
+		try {
+			userDao.createUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.info("AuthService registeredUser method error", (e));
+			throw new SQLException();
+		}
 		return user;
 	}
 

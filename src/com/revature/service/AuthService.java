@@ -8,6 +8,6 @@ public interface AuthService {
 	
 	public User authenticateUser(User user);
 	
-	public User registeredUser(User user);
+	public User registeredUser(User user) throws Exception;
 
 }

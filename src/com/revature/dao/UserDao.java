@@ -6,7 +6,7 @@ import com.revature.pojo.User;
 
 public interface UserDao {
 
-	public void createUser(User user);
+	public void createUser(User user) throws Exception;
 	
 	public User getUserByUsername(String username); 
 	
