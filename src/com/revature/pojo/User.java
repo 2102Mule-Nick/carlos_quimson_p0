@@ -9,7 +9,7 @@ public class User {
 	
 	private String last_name;
 	
-	private float balance;
+	//private float balance; removed balance from user and creating an account class
 
 	public String getUsername() {
 		return username;
@@ -55,14 +55,15 @@ public class User {
 		this.last_name = last_name;
 	}
 	
+	/*
 	public User(String username, String password, String first_name, String last_name, float balance) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.first_name = first_name;
 		this.last_name = last_name;
-		this.balance = balance;
-	}
+		//this.balance = balance;
+	}*/
 	
 	public User(String username, String password) {
 		super();
@@ -81,6 +82,7 @@ public class User {
 		this.last_name = "default last name";
 	}
 
+	/*
 	public float getBalance() {
 		return balance;
 	}
@@ -88,6 +90,6 @@ public class User {
 	public void setBalance(float balance) {
 		this.balance = balance;
 	}
-	
+	*/
 	
 }
