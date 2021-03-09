@@ -17,6 +17,8 @@ public class LoginMenu implements Menu{
 	
 	private Menu transactionMenu;
 	
+	private Menu accountsMenu;
+	
 	private Logger log = Logger.getRootLogger();
 	
 	@Override
@@ -37,8 +39,15 @@ public class LoginMenu implements Menu{
 		
 		try { //passes user information to authService to authenticate the username and password. if valid, user object gets passed to transacitonMenu
 			user = authService.authenticateUser(user);
+			((AccountsMenu) accountsMenu).setUser(user);
+			nextMenu = accountsMenu;
+			
+			/* Original method prior to use of SQL
 			((TransactionMenu) transactionMenu).setUser(user);
 			nextMenu = transactionMenu; //passes a transactionMenu with the user set as the next menu
+			*/
+			
+			
 		}
 		catch (Exception e) { //catches exceptions from the authService
 			System.out.println("Check your login information and try again.");
@@ -72,6 +81,12 @@ public class LoginMenu implements Menu{
 		// TODO Auto-generated constructor stub
 	}
 	
+	public LoginMenu(AuthService authService, Menu accountsMenu) {
+		super();
+		this.authService = authService;
+		this.accountsMenu = accountsMenu;
+	}
+
 	public LoginMenu (AuthService authService, TransactionMenu transactionMenu) {
 		super();
 		this.authService = authService;

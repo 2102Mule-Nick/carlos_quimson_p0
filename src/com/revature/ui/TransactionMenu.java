@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.revature.dao.AccountDao;
 import com.revature.dao.UserDao;
 import com.revature.pojo.Account;
 import com.revature.pojo.User;
@@ -17,6 +18,8 @@ public class TransactionMenu implements Menu {
 	private Menu checkBalanceMenu;
 	private User user;
 	private Logger log = Logger.getRootLogger();
+	private Account account;
+	private AccountDao accountDao;
 	
 	@Override
 	public Menu advance() {
@@ -27,7 +30,8 @@ public class TransactionMenu implements Menu {
 	@Override
 	public void displayOptions() {
 		// TODO Auto-generated method stub
-		System.out.println("What transaction would you like to do " + user.getFirst_name() + " " + user.getLast_name());
+		//System.out.println("What transaction would you like to do?");
+		System.out.println("What transaction would you like to do on your " + account.getAccountType() + " account " + user.getFirst_name() + " " + user.getLast_name());
 		System.out.println("1 for deposits");
 		System.out.println("2 for withdrawals");
 		System.out.println("3 to check your balance");
@@ -41,15 +45,21 @@ public class TransactionMenu implements Menu {
 				//depositsMenu = new DepositsMenu(account); //creates a new menu instance and attaches it to depositsMenu
 				 //creates a new menu instance and attaches it to depositsMenu
 				((DepositsMenu) depositsMenu).setUser(user);
+				((DepositsMenu) depositsMenu).setAccount(account);
+				((DepositsMenu) depositsMenu).setAccountDao(accountDao);
 				nextMenu = depositsMenu; //depositsMenu
 				break;
 			case "2":
 				((WithdrawalsMenu) withdrawalsMenu).setUser(user);
+				((WithdrawalsMenu) withdrawalsMenu).setAccount(account);
+				((WithdrawalsMenu) withdrawalsMenu).setAccountDao(accountDao);
 				nextMenu = withdrawalsMenu;
 				break;
 			case "3":
 				//nextMenu = new CheckBalanceMenu(scan, this, user);
 				((CheckBalanceMenu) checkBalanceMenu).setUser(user);
+				((CheckBalanceMenu) checkBalanceMenu).setAccount(account);
+				((CheckBalanceMenu) checkBalanceMenu).setAccountDao(accountDao);
 				nextMenu = checkBalanceMenu;
 				break;
 			case "0":
@@ -74,7 +84,21 @@ public class TransactionMenu implements Menu {
 		return null;
 	}
 	
-	
+	public AccountDao getAccountDao() {
+		return accountDao;
+	}
+
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 
 	public User getUser() {
 		return user;

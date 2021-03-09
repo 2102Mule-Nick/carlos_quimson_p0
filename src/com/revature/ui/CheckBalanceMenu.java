@@ -2,6 +2,7 @@ package com.revature.ui;
 
 import java.util.Scanner;
 
+import com.revature.dao.AccountDao;
 import com.revature.pojo.Account;
 import com.revature.pojo.User;
 import com.revature.service.TransactionService;
@@ -14,6 +15,8 @@ public class CheckBalanceMenu implements Menu {
 	private TransactionService transaction;
 	private User user;
 	private Menu transactionMenu;
+	private Account account;
+	private AccountDao accountDao;
 	
 	
 	public Menu getTransactionMenu() {
@@ -58,6 +61,22 @@ public class CheckBalanceMenu implements Menu {
 	}
 	
 	
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public AccountDao getAccountDao() {
+		return accountDao;
+	}
+
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
+	}
 
 	public User getUser() {
 		return user;

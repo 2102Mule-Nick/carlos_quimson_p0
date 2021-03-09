@@ -12,7 +12,7 @@ public interface AccountDao {
 	
 	public List<Account> getAllAccounts(); //only makes sense for admin users
 	
-	public void updateAccount(Account account, float amount); // update the balance of the accounts
+	public void updateAccount(Account account); // update the balance of the accounts
 	
 	public void removeAccount(); //deletion of an account but not a user
 

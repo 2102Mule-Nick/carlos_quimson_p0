@@ -31,7 +31,7 @@ public class AuthServiceImpl implements AuthService {
 
 	public User authenticateUser(User user) {
 		// Makes sure that the password provided for the User object is the password associated for the User
-		
+		log.info("AuthServiceImpl.authenticateUser method called");
 		User existingUser = userDao.getUserByUsername(user.getUsername());
 		
 		if (existingUser.getPassword().equals(user.getPassword())) {
@@ -43,7 +43,7 @@ public class AuthServiceImpl implements AuthService {
 	@Override
 	public User registeredUser(User user) throws Exception {
 		// adds the user to the persistent files. Was supposed to be registerUser
-		log.info("UserDaoPostgres create User method getting called");
+		log.info("AuthServiceImpl: Calling passed userDao.createUser");
 		try {
 			userDao.createUser(user);
 		} catch (Exception e) {

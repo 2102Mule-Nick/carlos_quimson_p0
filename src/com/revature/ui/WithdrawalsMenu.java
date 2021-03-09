@@ -2,6 +2,7 @@ package com.revature.ui;
 
 import java.util.Scanner;
 
+import com.revature.dao.AccountDao;
 import com.revature.pojo.Account;
 import com.revature.pojo.User;
 import com.revature.service.TransactionService;
@@ -14,6 +15,8 @@ public class WithdrawalsMenu implements Menu {
 	private TransactionService transaction;
 	private User user;
 	private Menu transactionMenu;
+	private Account account;
+	private AccountDao accountDao;
 	
 	@Override
 	public Menu advance() {
@@ -28,7 +31,7 @@ public class WithdrawalsMenu implements Menu {
 		
 		try {
 			float withdraw = Float.parseFloat(scan.nextLine());
-			transaction.withdraw(user, withdraw); //calls the deposit method in the transaction class
+			transaction.withdraw(user, withdraw, account); //calls the deposit method in the transaction class
 			nextMenu = transactionMenu;
 		}
 		catch (IllegalArgumentException e) {
@@ -79,6 +82,22 @@ public class WithdrawalsMenu implements Menu {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public AccountDao getAccountDao() {
+		return accountDao;
+	}
+
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
 	}
 
 	

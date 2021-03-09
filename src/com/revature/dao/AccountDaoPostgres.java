@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -44,30 +45,66 @@ public class AccountDaoPostgres implements AccountDao {
 	@Override
 	public List<Account> getAccountsByUser(User user) {
 		// TODO Auto-generated method stub
+		log.info("AccountDaoPostgres.getAccountsByUser method called");
+		
+		Account account = null;
+		
+		List<Account> listOfAccounts = new ArrayList<Account>();
+		
 		sqlConnect = ConnectionSingleton.getConnection();
 		
-		String sqlStatement = "SELECT * FROM accounts WHERE account_owner = ?";
+		String sqlStatement = "SELECT * FROM accounts WHERE account_owner = (SELECT user_id FROM users where username = ?)";
+		
+		//String sqlStatement2 = "SELECT user_id FROM users WHERE username = ?";
 				
 		PreparedStatement psqlStatement = null;
+		//PreparedStatement psqlStatement2 = null;
 		
+		//ResultSet userFromSql = null;
 		ResultSet result = null;
+		//int user_id = 0;
 		
 		try {
+			log.info("User: " + user.getUsername());
+			
+			/*
+			psqlStatement2 = sqlConnect.prepareStatement(sqlStatement2);
+			psqlStatement2.setString(1, user.getUsername());
+			userFromSql = psqlStatement2.executeQuery();
+			
+			while (userFromSql.next()) {
+				user_id =  userFromSql.getInt("user_id");
+			}
+			log.info("userFromSql: " + userFromSql.getInt("user_id"));
+			*/
+			
 			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
-			psqlStatement.setString(1,  "SELECT user_id FROM users WHERE username = '" + user.getUsername() + "'");
+			psqlStatement.setString(1, user.getUsername());
+
+			//psqlStatement.setInt(1, 1); // hardcoded for testing
+			//psqlStatement.setString(1,  "SELECT user_id FROM users WHERE username = '" + user.getUsername() + "'");
 			
 			result = psqlStatement.executeQuery();
 			
 			while (result.next()) {
-				log.info("Accounts for user");
-				// need to do more logic here
+				// need to do more logic here to handle <Accounts>
+				account = new Account();
+				//(User accountOwner, int account_number, float balance, String accountType)
+				account.setAccount_number(result.getInt("account_id"));
+				account.setAccountType(result.getString("account_type"));
+				account.setBalance(result.getFloat("balance"));
+				//get account owner from users table
+				account.setAccountOwner(user);
+				
+				listOfAccounts.add(account);
 			}
 			
 		} catch (SQLException e) {
 			log.error("AccountDaoPostgres.getAccountsByUser: Error getting all accounts by user");
+			//throw an error here
 		}
 		
-		return null;
+		return listOfAccounts;
 	}
 
 	@Override
@@ -77,7 +114,7 @@ public class AccountDaoPostgres implements AccountDao {
 	}
 
 	@Override
-	public void updateAccount(Account account, float amount) {
+	public void updateAccount(Account account) {
 		// TODO Auto-generated method stub
 		sqlConnect = ConnectionSingleton.getConnection();
 		
@@ -88,7 +125,7 @@ public class AccountDaoPostgres implements AccountDao {
 		try {
 			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
 			
-			psqlStatement.setFloat(1, amount);
+			psqlStatement.setFloat(1, account.getBalance());
 			psqlStatement.setInt(2,  account.getAccount_number());
 			
 			psqlStatement.executeUpdate();
@@ -103,5 +140,12 @@ public class AccountDaoPostgres implements AccountDao {
 		// TODO Auto-generated method stub
 
 	}
+
+	public AccountDaoPostgres() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 
 }

@@ -2,6 +2,9 @@ package com.revature.ui;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
+import com.revature.dao.AccountDao;
 import com.revature.pojo.Account;
 import com.revature.pojo.User;
 import com.revature.service.TransactionService;
@@ -14,6 +17,9 @@ public class DepositsMenu implements Menu {
 	private TransactionService transaction;
 	private User user;
 	private Menu transactionMenu;
+	private Account account;
+	private AccountDao accountDao;
+	private Logger log = Logger.getRootLogger();
 	
 	
 	@Override
@@ -29,7 +35,7 @@ public class DepositsMenu implements Menu {
 		
 		float deposit = Float.parseFloat(scan.nextLine());
 		try {
-			transaction.deposit(user, deposit); //calls the deposit method in the transaction class
+			transaction.deposit(user, deposit, account); //calls the deposit method in the transaction class
 			//System.out.println(user.getBalance());
 			//System.out.println(transaction.checkBalance(user));
 			nextMenu = transactionMenu;
@@ -92,6 +98,22 @@ public class DepositsMenu implements Menu {
 		super();
 		this.scan = scan;
 		this.transaction = transaction;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public AccountDao getAccountDao() {
+		return accountDao;
+	}
+
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
 	}
 	
 	

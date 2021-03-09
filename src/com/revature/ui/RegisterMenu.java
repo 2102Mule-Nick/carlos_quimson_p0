@@ -34,10 +34,13 @@ public class RegisterMenu implements Menu {
 		String userName = scan.nextLine();
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
+		/*
 		System.out.println("Enter initial account balance");
 		float balance = Float.parseFloat(scan.nextLine());
+		*/
 		
-		User user = new User(userName, password, firstName, lastName, balance);
+		User user = new User(userName, password, firstName, lastName);
+		//User user = new User(userName, password, firstName, lastName, balance);
 		
 		if (!authService.existingUser(user)) { // checks if username/user is already registered
 			try {

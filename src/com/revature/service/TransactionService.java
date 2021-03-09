@@ -5,9 +5,9 @@ import com.revature.pojo.User;
 
 public interface TransactionService {
 	
-	public void deposit(User user, float amount) throws IllegalArgumentException;
+	public void deposit(User user, float amount, Account account) throws IllegalArgumentException;
 	
-	public void withdraw(User user, float amount);
+	public void withdraw(User user, float amount, Account account);
 	
 	public float checkBalance(User user);
 	

@@ -87,6 +87,7 @@ public class UserDaoPostgres2 implements UserDao {
 		ResultSet result = null;
 		
 		try {
+			log.info("UserDaoPostgres2.getUserByUsername: preparing prepared statement");
 			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
 			psqlStatement.setString(1, username);
 			result = psqlStatement.executeQuery();
@@ -102,7 +103,7 @@ public class UserDaoPostgres2 implements UserDao {
 				return user;
 			}
 		} catch (SQLException e) {
-			
+			log.error("UserDaoPostgres2.getUserByUsername: Error returning user from DB");
 		}
 		
 		return null;
