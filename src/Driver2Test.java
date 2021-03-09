@@ -28,10 +28,10 @@ class Driver2Test {
 	
 	private static final TransactionServiceImpl transactionService = new TransactionServiceImpl(user);
 	
-	@Test
+	/*@Test
 	void test() {
 		fail("Not yet implemented");
-	}
+	}*/
 	
 	/*
 	@Test //Sample

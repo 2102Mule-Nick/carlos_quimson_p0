@@ -175,7 +175,31 @@ public class UserDaoPostgres implements UserDao {
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
+		log.info("UserDaoPostgres updateUser method called");
 		
+		sqlConnect = ConnectionSingleton.getConnection();
+		
+		String sqlStatement = "update users set balance = ? WHERE username = ?";
+		//String sqlStatement = "update users set first_name = ?, last_name = ?, passcode = ? WHERE username = ?";
+		
+		PreparedStatement psqlStatement = null;
+		
+		try {
+			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
+			psqlStatement.setFloat(1, user.getBalance());
+			psqlStatement.setString(2, user.getUsername());
+			
+			/*
+			psqlStatement.setString(1, user.getFirst_name());
+			psqlStatement.setString(2, user.getLast_name());
+			psqlStatement.setString(3, user.getPassword());
+			psqlStatement.setString(4, user.getUsername());
+			*/
+			psqlStatement.executeUpdate();
+			log.info("User account updated");
+		} catch (SQLException e) {
+			log.info("Unsuccessful update", e);
+		}
 	}
 
 	@Override

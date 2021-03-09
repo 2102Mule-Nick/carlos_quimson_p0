@@ -36,6 +36,7 @@ public class DepositsMenu implements Menu {
 		}
 		catch (IllegalArgumentException e) {
 			// need to implement
+			nextMenu = this;
 		}
 	}
 
