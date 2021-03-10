@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import com.revature.dao.AccountDao;
 import com.revature.dao.AccountDaoPostgres;
+import com.revature.dao.TransactionDao;
+import com.revature.dao.TransactionDaoPostgres;
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
 import com.revature.dao.UserDaoKryo;
@@ -21,6 +23,7 @@ import com.revature.ui.DepositsMenu;
 import com.revature.ui.LoginMenu;
 import com.revature.ui.Menu;
 import com.revature.ui.RegisterMenu;
+import com.revature.ui.TransactionHistoryMenu;
 import com.revature.ui.TransactionMenu;
 import com.revature.ui.WelcomeMenu;
 import com.revature.ui.WithdrawalsMenu;
@@ -42,6 +45,8 @@ public class Driver4 {
 		
 		Scanner scan = new Scanner(System.in);
 		
+		TransactionDao transactionDao = new TransactionDaoPostgres();
+		
 		UserDao userDao = new UserDaoPostgres2();
 		
 		AccountDao accountDao = new AccountDaoPostgres();
@@ -54,6 +59,12 @@ public class Driver4 {
 		
 		((TransactionServPostgres) transactionService).setAccountDao(accountDao);
 		
+		((TransactionServPostgres) transactionService).setTransactionDao(transactionDao);
+		
+		TransactionHistoryMenu transactionHistoryMenu = new TransactionHistoryMenu();
+		
+		transactionHistoryMenu.setTransactionDao(transactionDao);
+		
 		DepositsMenu depositsMenu = new DepositsMenu(scan, transactionService);
 		
 		WithdrawalsMenu withdrawalsMenu = new WithdrawalsMenu(scan, transactionService);
@@ -61,6 +72,10 @@ public class Driver4 {
 		depositsMenu.setScanner(scan);
 		
 		TransactionMenu transactionMenu = new TransactionMenu(depositsMenu, withdrawalsMenu, checkBalanceMenu);
+		
+		transactionMenu.setTransactionHistoryMenu(transactionHistoryMenu);
+		
+		transactionHistoryMenu.setTransactionMenu(transactionMenu);
 		
 		depositsMenu.setTransactionMenu(transactionMenu);
 		

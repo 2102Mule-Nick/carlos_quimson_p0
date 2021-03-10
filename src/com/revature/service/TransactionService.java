@@ -9,6 +9,6 @@ public interface TransactionService {
 	
 	public void withdraw(User user, float amount, Account account);
 	
-	public float checkBalance(User user);
+	public float checkBalance(Account account);
 	
 }

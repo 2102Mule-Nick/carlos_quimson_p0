@@ -20,6 +20,7 @@ public class TransactionMenu implements Menu {
 	private Logger log = Logger.getRootLogger();
 	private Account account;
 	private AccountDao accountDao;
+	private Menu transactionHistoryMenu;
 	
 	@Override
 	public Menu advance() {
@@ -35,6 +36,7 @@ public class TransactionMenu implements Menu {
 		System.out.println("1 for deposits");
 		System.out.println("2 for withdrawals");
 		System.out.println("3 to check your balance");
+		System.out.println("4 to view your transaction history");
 		System.out.println("0 to logout");
 		//System.out.println(user.getUsername());
 		
@@ -61,6 +63,11 @@ public class TransactionMenu implements Menu {
 				((CheckBalanceMenu) checkBalanceMenu).setAccount(account);
 				((CheckBalanceMenu) checkBalanceMenu).setAccountDao(accountDao);
 				nextMenu = checkBalanceMenu;
+				break;
+			case "4":
+				((TransactionHistoryMenu) transactionHistoryMenu).setAccount(account);
+				((TransactionHistoryMenu) transactionHistoryMenu).setUser(user);
+				nextMenu = transactionHistoryMenu;
 				break;
 			case "0":
 				System.out.println("You are now logged out. Thank you for using this app.");
@@ -112,6 +119,14 @@ public class TransactionMenu implements Menu {
 	public void setScanner(Scanner scan) {
 		// TODO Auto-generated method stub
 		this.scan = scan;
+	}
+
+	public Menu getTransactionHistoryMenu() {
+		return transactionHistoryMenu;
+	}
+
+	public void setTransactionHistoryMenu(Menu transactionHistoryMenu) {
+		this.transactionHistoryMenu = transactionHistoryMenu;
 	}
 
 	public TransactionMenu() {

@@ -36,7 +36,7 @@ public class CheckBalanceMenu implements Menu {
 	@Override
 	public void displayOptions() {
 		// TODO Auto-generated method stub
-		System.out.println("Your current balance is: $" + user.getBalance());
+		System.out.println("Your current balance is: $" + account.getBalance());
 		//System.out.println(user.getBalance());
 		//System.out.println(user.getUsername());
 		nextMenu = transactionMenu;
