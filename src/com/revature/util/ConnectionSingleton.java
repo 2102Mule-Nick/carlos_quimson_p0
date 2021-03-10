@@ -29,7 +29,7 @@ public class ConnectionSingleton {
 		Properties props = new Properties();
 		props.setProperty("user", dbUsername);
 		props.setProperty("password", dbPassword);
-		props.setProperty("currentSchema", "project0");
+		props.setProperty("currentSchema", System.getenv("DB_SCHEMA"));
 		
 		
 		try {

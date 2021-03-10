@@ -53,7 +53,7 @@ public class AccountDaoPostgres implements AccountDao {
 		
 		sqlConnect = ConnectionSingleton.getConnection();
 		
-		String sqlStatement = "SELECT * FROM accounts WHERE account_owner = (SELECT user_id FROM users where username = ?)";
+		String sqlStatement = "SELECT * FROM accounts WHERE account_owner = (SELECT user_id FROM users where username = ?) ORDER BY account_id Asc";
 		
 		//String sqlStatement2 = "SELECT user_id FROM users WHERE username = ?";
 				

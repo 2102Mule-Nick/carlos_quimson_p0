@@ -39,7 +39,7 @@ public class AccountsMenu implements Menu {
 		
 		//iterate or limit the number of accounts to 2?
 		for (int x = 0; x < this.accounts.size(); x++) {
-			System.out.println((x) + ": " + this.accounts.get(x).getAccountType());
+			System.out.println((x) + ": " + this.accounts.get(x).getAccountType() + " | Account ID: " + this.accounts.get(x).getAccount_number() + ": $" + this.accounts.get(x).getBalance());
 		}
 
 		System.out.println("Which account would you like to access or type 'open' to create a new account?");

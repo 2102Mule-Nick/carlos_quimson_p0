@@ -119,5 +119,9 @@ public class TransactionDaoPostgres implements TransactionDao {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void setConnection(Connection connection) {
+		this.sqlConnect = connection;
+	}
 
 }
