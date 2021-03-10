@@ -9124,3 +9124,1291 @@ Log session start time Wed Mar 10 00:11:06 EST 2021<br>
 <td title="root category">root</td>
 <td title="Message">User has logged out</td>
 </tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Log</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Wed Mar 10 10:53:44 EST 2021<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AuthServiceImpl.authenticateUser method called</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres getUserByUsername method called</td>
+</tr>
+
+<tr>
+<td>95</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1338</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres2.getUserByUsername: preparing prepared statement</td>
+</tr>
+
+<tr>
+<td>1379</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User is in DB</td>
+</tr>
+
+<tr>
+<td>1379</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User to be returned to AuthServices</td>
+</tr>
+
+<tr>
+<td>1380</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.getAccountsByUser method called</td>
+</tr>
+
+<tr>
+<td>1380</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1507</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User: carlos</td>
+</tr>
+
+<tr>
+<td>6069</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>6089</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>6231</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: control reached end of trigger procedure without RETURN
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.deposit(TransactionServPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.DepositsMenu.displayOptions(DepositsMenu.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>6236</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>6343</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Log</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Wed Mar 10 11:08:10 EST 2021<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AuthServiceImpl.authenticateUser method called</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres getUserByUsername method called</td>
+</tr>
+
+<tr>
+<td>34</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>647</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres2.getUserByUsername: preparing prepared statement</td>
+</tr>
+
+<tr>
+<td>677</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User is in DB</td>
+</tr>
+
+<tr>
+<td>678</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User to be returned to AuthServices</td>
+</tr>
+
+<tr>
+<td>678</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.getAccountsByUser method called</td>
+</tr>
+
+<tr>
+<td>679</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>911</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User: carlos</td>
+</tr>
+
+<tr>
+<td>7097</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.getTransactionByUser method called</td>
+</tr>
+
+<tr>
+<td>7097</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>19901</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>19901</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>19995</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>19995</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>20069</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>185229</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>185230</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>185432</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>185432</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>185510</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>200695</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>200798</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>200799</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>200872</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>244810</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>244810</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>244899</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>244899</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>244972</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>351351</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>351352</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>351467</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: column &quot;change_amount&quot; does not exist
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange() line 3 at IF
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.deposit(TransactionServPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.DepositsMenu.displayOptions(DepositsMenu.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>351473</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>351570</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>386766</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>386857</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>386857</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>386931</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>432718</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>432718</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>432839</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>432839</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>432919</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>465408</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>465504</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>465505</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>465705</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>643158</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>643266</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>643266</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>643342</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>728522</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>728523</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>728625</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: column &quot;new&quot; of relation &quot;transactions&quot; does not exist
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange() line 4 at SQL statement
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.deposit(TransactionServPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.DepositsMenu.displayOptions(DepositsMenu.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>728626</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>728706</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>763158</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>763159</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>763257</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>763257</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>763330</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1392657</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>1392657</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1392761</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: column &quot;change_amount&quot; does not exist
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange() line 3 at IF
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.deposit(TransactionServPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.DepositsMenu.displayOptions(DepositsMenu.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>1392762</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1392851</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1449255</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>1449256</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1449354</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table &quot;transactions&quot;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange() line 3 at IF
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.deposit(TransactionServPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.DepositsMenu.displayOptions(DepositsMenu.java:38)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>1449355</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1449439</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1616225</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1616330</td>
+<td title="main thread">main</td>
+<td title="Level"><font color="#993300"><strong>ERROR</strong></font></td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB</td>
+</tr>
+<tr><td bgcolor="#993300" style="color:White; font-size : xx-small;" colspan="6">org.postgresql.util.PSQLException: ERROR: control reached end of trigger procedure without RETURN
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  Where: PL/pgSQL function updatechange()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:153)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.dao.TransactionDaoPostgres.createTransaction(TransactionDaoPostgres.java:40)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.service.TransactionServPostgres.withdraw(TransactionServPostgres.java:69)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.ui.WithdrawalsMenu.displayOptions(WithdrawalsMenu.java:34)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;	at com.revature.Driver4.main(Driver4.java:120)
+</td></tr>
+
+<tr>
+<td>1616330</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1616412</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1639990</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1640095</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>1640096</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1640169</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1747621</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1747720</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>1747720</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1747962</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>1814784</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>1814785</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1814877</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>1814877</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>1814952</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>2314684</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>2314685</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>2314774</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>2314775</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>2314850</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+
+<tr>
+<td>2340959</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User has logged out</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Log</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Wed Mar 10 12:05:32 EST 2021<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AuthServiceImpl.authenticateUser method called</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres getUserByUsername method called</td>
+</tr>
+
+<tr>
+<td>35</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>640</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres2.getUserByUsername: preparing prepared statement</td>
+</tr>
+
+<tr>
+<td>666</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User is in DB</td>
+</tr>
+
+<tr>
+<td>666</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User to be returned to AuthServices</td>
+</tr>
+
+<tr>
+<td>667</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.getAccountsByUser method called</td>
+</tr>
+
+<tr>
+<td>667</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>873</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User: carlosq</td>
+</tr>
+
+<tr>
+<td>20871</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>20967</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>20967</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>21035</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>HTML Layout Log</title>
+<style type="text/css">
+<!--
+body, table {font-family: arial,sans-serif; font-size: x-small;}
+th {background: #336699; color: #FFFFFF; text-align: left;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="6" leftmargin="6">
+<hr size="1" noshade>
+Log session start time Wed Mar 10 12:09:03 EST 2021<br>
+<br>
+<table cellspacing="0" cellpadding="4" border="1" bordercolor="#224466" width="100%">
+<tr>
+<th>Time</th>
+<th>Thread</th>
+<th>Level</th>
+<th>Category</th>
+<th>Message</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AuthServiceImpl.authenticateUser method called</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres getUserByUsername method called</td>
+</tr>
+
+<tr>
+<td>33</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>650</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">UserDaoPostgres2.getUserByUsername: preparing prepared statement</td>
+</tr>
+
+<tr>
+<td>675</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User is in DB</td>
+</tr>
+
+<tr>
+<td>675</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User to be returned to AuthServices</td>
+</tr>
+
+<tr>
+<td>675</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.getAccountsByUser method called</td>
+</tr>
+
+<tr>
+<td>675</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>869</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">User: carlosq</td>
+</tr>
+
+<tr>
+<td>13448</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">saving</td>
+</tr>
+
+<tr>
+<td>13450</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>13621</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Query to get last trans_id</td>
+</tr>
+
+<tr>
+<td>13626</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">result: org.postgresql.jdbc.PgResultSet@28864e92</td>
+</tr>
+
+<tr>
+<td>13626</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">transId: 1</td>
+</tr>
+
+<tr>
+<td>13639</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">TransactionDaoPostgres.createTransaction: Created transaction record</td>
+</tr>
+
+<tr>
+<td>13639</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">Attempting to connect to database</td>
+</tr>
+
+<tr>
+<td>13713</td>
+<td title="main thread">main</td>
+<td title="Level">INFO</td>
+<td title="root category">root</td>
+<td title="Message">AccountDaoPostgres.updateAccount: Update Successful</td>
+</tr>

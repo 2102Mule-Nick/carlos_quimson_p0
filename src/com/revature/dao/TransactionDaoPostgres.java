@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +30,17 @@ public class TransactionDaoPostgres implements TransactionDao {
 		
 		PreparedStatement psqlStatement = null;
 		
+		String getLastTrans = "SELECT transaction_id FROM TRANSACTIONS ORDER BY transaction_id desc LIMIT 1";
+		PreparedStatement getTransId = null;
+		
+		String callableString = "call calculateChangeAmount(?)";
+		CallableStatement callableStmt = null;
+		
+		int transId = 0;
+		
+		ResultSet result = null;
 		try {
+
 			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
 			psqlStatement.setString(1, transaction.getUser().getUsername());
 			psqlStatement.setInt(2, transaction.getAccount().getAccount_number());
@@ -38,6 +49,22 @@ public class TransactionDaoPostgres implements TransactionDao {
 			psqlStatement.setString(5,  transaction.getTransactionType());
 			
 			psqlStatement.execute();
+			
+			log.info("Query to get last trans_id");
+			getTransId = sqlConnect.prepareStatement(getLastTrans);
+			result = getTransId.executeQuery();
+			log.info("result: " + result);
+			
+			while (result.next()) {
+				transId = result.getInt("transaction_id");
+			}
+			log.info("transId: " + transId);
+			
+			// Using JDBC to call a stored procedure using a callable statement
+			callableStmt = sqlConnect.prepareCall(callableString);
+			callableStmt.setInt(1, transId);
+			callableStmt.execute();
+			
 			log.info("TransactionDaoPostgres.createTransaction: Created transaction record");
 		} catch (SQLException e) {
 			log.error("TransactionDaoPostgres.createTransaction: Error creating transaction entry on DB", e);
