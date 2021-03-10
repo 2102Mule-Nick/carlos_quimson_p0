@@ -22,6 +22,7 @@ import com.revature.ui.CheckBalanceMenu;
 import com.revature.ui.DepositsMenu;
 import com.revature.ui.LoginMenu;
 import com.revature.ui.Menu;
+import com.revature.ui.OpenAccountMenu;
 import com.revature.ui.RegisterMenu;
 import com.revature.ui.TransactionHistoryMenu;
 import com.revature.ui.TransactionMenu;
@@ -85,12 +86,21 @@ public class Driver4 {
 		
 		AuthService authService = new AuthServiceImpl(userDao);
 		
-		Menu accountsMenu = new AccountsMenu(accountDao, transactionMenu);
+		OpenAccountMenu openAccountMenu = new OpenAccountMenu();
+		
+		openAccountMenu.setAccountDao(accountDao);
+		
+		openAccountMenu.setScanner(scan);
+		
+		AccountsMenu accountsMenu = new AccountsMenu(accountDao, transactionMenu);
 		
 //		Menu accountsMenu = new AccountsMenu(depositsMenu, withdrawalsMenu, checkBalanceMenu, accountDao); //check where to use an AccountServiceImpl
 		accountsMenu.setScanner(scan);
+		accountsMenu.setOpenAccountMenu(openAccountMenu);
 		
 		Menu loginMenu = new LoginMenu(authService, accountsMenu);
+		
+		openAccountMenu.setLoginMenu(loginMenu);
 		
 		//Menu loginMenu = new LoginMenu(authService, transactionMenu);
 		

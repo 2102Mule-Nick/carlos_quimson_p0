@@ -25,7 +25,7 @@ public class AccountDaoPostgres implements AccountDao {
 		sqlConnect = ConnectionSingleton.getConnection();
 		
 		String sqlStatement = "insert into accounts (account_type, balance,  account_owner)";
-		sqlStatement += "values (?, ?, ?);";
+		sqlStatement += "values (?, ?, (SELECT user_id FROM users WHERE username = ?));";
 		
 		PreparedStatement psqlStatement = null;
 		
@@ -33,7 +33,7 @@ public class AccountDaoPostgres implements AccountDao {
 			psqlStatement = sqlConnect.prepareStatement(sqlStatement);
 			psqlStatement.setString(1, account.getAccountType());
 			psqlStatement.setFloat(2,  account.getBalance());
-			psqlStatement.setString(3, "SELECT user_id from users where username = '" + account.getAccountOwner().getUsername() + "'");
+			psqlStatement.setString(3, account.getAccountOwner().getUsername());
 			
 			psqlStatement.execute();
 			log.info("AccountDaoPostgres: Account created");

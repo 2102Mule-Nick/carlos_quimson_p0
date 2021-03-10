@@ -21,6 +21,7 @@ public class AccountsMenu implements Menu {
 	private List<Account> accounts = null;
 	private AccountDao accountDao;
 	private Menu transactionMenu;
+	private Menu openAccountMenu;
 	
 	@Override
 	public Menu advance() {
@@ -41,20 +42,25 @@ public class AccountsMenu implements Menu {
 			System.out.println((x) + ": " + this.accounts.get(x).getAccountType());
 		}
 
-		System.out.println("Which account would you like to access?");
+		System.out.println("Which account would you like to access or type 'open' to create a new account?");
 		String response = scan.nextLine();
 		
-		//switch to asking for checking or saving if applicable
-		if (Integer.parseInt(response) > (this.accounts.size()-1) || (Integer.parseInt(response) < 0)) {
-			//log.info("User chose an invalid option");
+		if (response.equalsIgnoreCase("open")) {
+			// insert account open menu here
+			
+			((OpenAccountMenu) openAccountMenu).setUser(user);
+			nextMenu = openAccountMenu;
+		} 
+		else if (Integer.parseInt(response) < (this.accounts.size()) && (Integer.parseInt(response) >= 0)) {
+			((TransactionMenu) transactionMenu).setAccount(this.accounts.get(Integer.parseInt(response)));
+			((TransactionMenu) transactionMenu).setUser(user);
+			((TransactionMenu) transactionMenu).setAccountDao(accountDao);
+			nextMenu = transactionMenu;
+		}
+		else {
 			System.out.println("Invalid choice. Try again");
 			nextMenu = this;
 		}
-		
-		((TransactionMenu) transactionMenu).setAccount(this.accounts.get(Integer.parseInt(response)));
-		((TransactionMenu) transactionMenu).setUser(user);
-		((TransactionMenu) transactionMenu).setAccountDao(accountDao);
-		nextMenu = transactionMenu;
 	}
 
 	@Override
@@ -132,5 +138,15 @@ public class AccountsMenu implements Menu {
 		this.accountDao = accountDao;
 		this.transactionMenu = transactionMenu;
 	}
+
+	public Menu getOpenAccountMenu() {
+		return openAccountMenu;
+	}
+
+	public void setOpenAccountMenu(Menu openAccountMenu) {
+		this.openAccountMenu = openAccountMenu;
+	}
+	
+	
 
 }
