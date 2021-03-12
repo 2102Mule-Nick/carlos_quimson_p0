@@ -41,9 +41,9 @@ public class TransactionHistoryMenu implements Menu {
 		
 		for (int x = 0; x < this.transactions.size(); x++) {
 			String displayOutput = "Transaction Number: " + transactions.get(x).getTransactionNumber(); //enter formatting of result here
-			displayOutput += " Transaction Type: " + transactions.get(x).getTransactionType();
-			displayOutput += " Previous Balance: $" + transactions.get(x).getPreviousBalance();
-			displayOutput += " New Balance: $" + transactions.get(x).getNewBalance();
+			displayOutput += "| Transaction Type: " + transactions.get(x).getTransactionType();
+			displayOutput += "| Previous Balance: $" + transactions.get(x).getPreviousBalance();
+			displayOutput += "| New Balance: $" + transactions.get(x).getNewBalance();
 			
 			System.out.println(displayOutput);
 		}

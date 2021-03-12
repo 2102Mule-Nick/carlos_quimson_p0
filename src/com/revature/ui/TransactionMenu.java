@@ -32,7 +32,7 @@ public class TransactionMenu implements Menu {
 	public void displayOptions() {
 		// TODO Auto-generated method stub
 		//System.out.println("What transaction would you like to do?");
-		System.out.println("What transaction would you like to do on your " + account.getAccountType() + " account " + user.getFirst_name() + " " + user.getLast_name());
+		System.out.println("\nWhat transaction would you like to do on your " + account.getAccountType() + " account " + user.getFirst_name() + " " + user.getLast_name());
 		System.out.println("1 for deposits");
 		System.out.println("2 for withdrawals");
 		System.out.println("3 to check your balance");
